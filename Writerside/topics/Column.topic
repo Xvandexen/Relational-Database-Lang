@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Column" id="Column">
+
+    <chapter title="Creating a Column" id="column_creation">
+        <p>Columns are created by typing into a table,<br/>A column can have various arguments when created</p>
+
+        <code-block lang="text">
+            Staff{
+            column_one
+            column_two
+            column_three
+            }
+
+        </code-block>
+    </chapter>
+    <chapter title="Column Types" id="column_types">
+        Column Types are prefixed with a colon.
+        <code-block lang="text">
+            StaffWithTypes{
+            id :type(integer)
+            first_name :type(varchar(25))
+            phone_number :type(varchar(12))
+            department :char
+            }
+        </code-block>
+    </chapter>
+    <chapter title="Column Options" id="column_option">
+        <p> Optional Specifiers for columns are separated from the rest of the column using commas,
+            Like types, column options are signaled by a colon. <br/>
+            All options have parameters that change their behavior,
+            These are contained in parentheses after the option is declared </p>
+
+        <code-block>
+            staff_with_options{
+            id :integer, :unique, :pk,  :increment(int)
+            first_name :varchar(25)
+            middle_name :varchar(25), :nullable
+            phone_number :varchar(12)
+            department :char(3)
+            }
+        </code-block>
+
+
+
+        <chapter title="Default Options" id="default_options">
+            By default, every column has a set of options selected by default found here.<br/>
+            These can be set at a table level and a region level.
+            Examples
+            <code-block>
+                staff_with_defaults{
+                OPTIONS = :integer, :nullable(true)
+                //This means unless specified otherwise all columns will be able to have null values
+                //They will also be of the type integers
+
+                id  :unique, :pk,  :increment(int)
+                first_name :varchar(25)
+                middle_name :varchar(25),
+                phone_number :varchar(12)
+                department :char(3)
+
+
+                }
+
+
+                you
+            </code-block>
+        </chapter>
+        <chapter title="Options arguments" id="Arguments">
+            <deflist>
+                <def title="Unique(Active)">
+                    <deflist>
+                        <def title="Description">
+                            No  entries in column can match.
+                        </def>
+                        <def title="Arguments">
+                            <tabs>
+                                <tab title="Active" id="active">
+                                    Type = Boolean
+                                    This Argument determines whether the unique modifier is active or not.
+                                </tab>
+                            </tabs>
+                        </def>
+                    </deflist>
+                </def>
+                <def title="Nullable" id="nullable">
+                    <deflist>
+                        <def title="Description" id="description">
+                            A null value is accepted as a result in a column.<br/>
+
+                        </def>
+                        <def title="Arguments" id="arguments">
+                            <tabs>
+                                <tab title="Active" id="active-1">
+                                    Type = Boolean(true/false) <br/>
+                                    This Argument determines weather the unique modifier is active or not.
+                                </tab>
+                            </tabs>
+                        </def>
+                    </deflist>
+                    Arguments
+                </def>
+                <def title="default">
+
+                </def>
+            </deflist>
+
+        </chapter>
+    </chapter>
+
+
+</topic>

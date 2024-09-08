@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       id="Syntax" title="Syntax">
+
+  <chapter title="Regions" id="regions">
+    <p>Regions are used to seperate tables based on catagory<br/>This is very usefull when dealing with large
+      databases</p>
+  </chapter>
+  <chapter title="Tables" id="tables">
+    <chapter title="Creating a Table" id="creating-a-table">
+      <p>Tables are created by typing a name in a region followed by braces</p>
+
+      <code-block lang="generic">
+
+        Region region1
+        Staff {
+          column_one
+          column_two
+          column_thee
+        }
+      </code-block>
+    </chapter>
+  </chapter>
+
+
+</topic>
